@@ -1,0 +1,2 @@
+rootProject.name = "Expanse"
+include ':app'

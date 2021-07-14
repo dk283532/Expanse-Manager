@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "604899675309",
+    "project_id": "expanse-85f02",
+    "storage_bucket": "expanse-85f02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604899675309:android:afcac82eb469cfc07f0a24",
+        "android_client_info": {
+          "package_name": "com.example.expanse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604899675309-n8n97mshubnb31a0dt6586iltefu5u7a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.expanse",
+            "certificate_hash": "181a532e8d8410fff2aa93aa5bb6ee9b1f1968c3"
+          }
+        },
+        {
+          "client_id": "604899675309-mhv8ndv1fcpfij7a9qvb283558r1l7ij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7GKc7BueYj_mUEtutlds4nP7pzUPquH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604899675309-mhv8ndv1fcpfij7a9qvb283558r1l7ij.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

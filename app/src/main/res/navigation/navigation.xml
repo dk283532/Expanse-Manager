@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/firebaseGoogleLoginFragment">
+
+    <fragment
+        android:id="@+id/firebaseGoogleLoginFragment"
+        android:name="com.example.expanse.login.FirebaseGoogleLoginFragment"
+        android:label="fragment_firebase_google_login"
+        tools:layout="@layout/fragment_firebase_google_login" >
+
+        <action
+            android:id="@+id/action_firebaseGoogleLoginFragment_to_loginFragment1"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_firebaseGoogleLoginFragment_to_firebaseRegisterFragment"
+            app:destination="@id/firebaseRegisterFragment" />
+        <action
+            android:id="@+id/action_firebaseGoogleLoginFragment_to_transactionListFragment"
+            app:destination="@id/transactionListFragment" />
+        <action
+            android:id="@+id/action_firebaseGoogleLoginFragment_to_transactionListFragment2"
+            app:destination="@id/transactionListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.expanse.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_transactionListFragment"
+            app:destination="@id/transactionListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firebaseRegisterFragment"
+        android:name="com.example.expanse.login.FirebaseRegisterFragment"
+        android:label="fragment_firebase_register"
+        tools:layout="@layout/fragment_firebase_register" >
+        <action
+            android:id="@+id/action_firebaseRegisterFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_firebaseRegisterFragment_to_transactionListFragment2"
+            app:destination="@id/transactionListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionListFragment"
+        android:name="com.example.expanse.transactionui.TransactionListFragment"
+        android:label="fragment_transaction_list"
+        tools:layout="@layout/fragment_transaction_list" >
+        <action
+            android:id="@+id/action_transactionListFragment_to_transactionDetailFragment"
+            app:destination="@id/transactionDetailFragment" />
+        <action
+            android:id="@+id/action_transactionListFragment_to_savedProfileFragment"
+            app:destination="@id/savedProfileFragment" />
+        <action
+            android:id="@+id/action_transactionListFragment_to_dayTransactionFragment"
+            app:destination="@id/dayTransactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionDetailFragment"
+        android:name="com.example.expanse.transactionDetail.TransactionDetailFragment"
+        android:label="fragment_transaction_detail"
+        tools:layout="@layout/fragment_transaction_detail" >
+        <argument
+            android:name="id"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedProfileFragment"
+        android:name="com.example.expanse.transactionui.SavedProfileFragment"
+        android:label="fragment_saved_profile"
+        tools:layout="@layout/fragment_saved_profile" >
+        <action
+            android:id="@+id/action_savedProfileFragment_to_transactionListFragment"
+            app:destination="@id/transactionListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dayTransactionFragment"
+        android:name="com.example.expanse.dayTransaction.DayTransactionFragment"
+        android:label="fragment_day_transaction"
+        tools:layout="@layout/fragment_day_transaction" />
+
+</navigation>
