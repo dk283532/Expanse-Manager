@@ -5,18 +5,13 @@
     <item
         android:id="@+id/daily"
         android:icon="@drawable/ic_baseline_calendar_today_24"
-        android:title="Daily Expanse" />
+        android:title="Main Menu" />
 
     <item
         android:id="@+id/add_expanse"
         android:icon="@drawable/ic_baseline_add_circle_outline_24"
         android:title="Add Expanse" />
-    <item
-        android:id="@+id/covid_case"
-        android:title="Covid-Case"
-        android:iconTint="@color/teal_200"
-        android:icon="@drawable/ic_virus"
-        />
+
 
 
 </menu>

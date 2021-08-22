@@ -43,28 +43,24 @@ class TransactionAdapter(private val listener: (Long) -> Unit) : ListAdapter<Tra
 //                itemView.transaction_date.text = "20/10/2020"
 
                 if (transaction.type.equals(0)) {
+
+
                     itemView.transaction_mode.text = "Cash"
                 } else if (transaction.type.equals(1)) {
                     itemView.transaction_mode.text = "Debit Card"
                 } else {
                     itemView.transaction_mode.text = "Credit Card"
                 }
-
-
-
-                itemView.transaction_amount.text = transaction.amount.toString()
-
                 itemView.transaction_date.text = transaction.date
-
-
-//                itemView.plus_minus.text= transaction.plusMinus.toString()
-
                 if (transaction.plusMinus == 1) {
+                    itemView.transaction_amount.text = "+"+transaction.amount.toString()
                     itemView.plus_minus.text = "+"
                     itemView.plus_minus.setTextColor(Color.parseColor("#ADFF2F"))
                     itemView.transaction_amount.setTextColor(Color.parseColor("#ADFF2F"))
                     itemView.type_view.setBackgroundColor(Color.parseColor("#ADFF2F"))
-                } else if (transaction.plusMinus == 0) {
+                }
+                if (transaction.plusMinus == 0) {
+                    itemView.transaction_amount.text = "-"+transaction.amount.toString()
                     itemView.plus_minus.text = "-"
                     itemView.plus_minus.setTextColor(Color.parseColor("#ff726f"))
                     itemView.transaction_amount.setTextColor(Color.parseColor("#ff726f"))
@@ -74,11 +70,11 @@ class TransactionAdapter(private val listener: (Long) -> Unit) : ListAdapter<Tra
         }
     }
 }
+
 class DiffCallback : DiffUtil.ItemCallback<Transaction>() {
     override fun areItemsTheSame(oldItem: Transaction, newItem: Transaction): Boolean {
         return oldItem.id == newItem.id
     }
-
     override fun areContentsTheSame(oldItem: Transaction, newItem: Transaction): Boolean {
         return oldItem == newItem
     }

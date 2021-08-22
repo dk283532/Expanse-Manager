@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/teal_light"
     tools:context=".transactionui.TransactionListFragment">
-
-
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
@@ -18,17 +15,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:menu="@menu/botton_navigation" />
-
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <com.google.android.material.appbar.MaterialToolbar
             android:background="@color/teal_200"
             android:id="@+id/addAppBar"
@@ -38,22 +32,16 @@
             app:menu="@menu/transaction_list"
             app:title="Expense Manager" />
     </com.google.android.material.appbar.AppBarLayout>
-
-
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="56dp"
         android:fillViewport="true">
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/sahi"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView1"
                 android:layout_width="match_parent"

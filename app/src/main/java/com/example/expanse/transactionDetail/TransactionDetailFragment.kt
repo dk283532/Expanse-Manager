@@ -12,9 +12,11 @@ import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.example.expanse.R
 import com.example.expanse.data.Transaction
 import com.example.expanse.data.TransactionType
+import com.example.expanse.transactionui.SavedProfileFragmentDirections
 import kotlinx.android.synthetic.main.fragment_transaction_detail.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -27,7 +29,7 @@ class TransactionDetailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewModel = ViewModelProviders.of(this).get(TransactionDetailViewmodel::class.java)
+        viewModel = ViewModelProviders.of(requireActivity()).get(TransactionDetailViewmodel::class.java)
     }
 
     override fun onCreateView(
@@ -95,7 +97,6 @@ class TransactionDetailFragment : Fragment() {
         })
 
         income.setOnClickListener {
-
             saveTransactionIncome()
         }
 
@@ -155,11 +156,8 @@ class TransactionDetailFragment : Fragment() {
         val category = selectcategory.text.toString()
         val comment = comment.editText?.text.toString()
 
-        if (transactionName.isEmpty() ||amount.isEmpty() ||selectDate.isEmpty() ||comment.isEmpty() ){
-            Toast.makeText(requireContext(),"Please Enter Complete Information",Toast.LENGTH_SHORT).show()
+        if (transactionName.isNotEmpty()  && amount.isNotEmpty() && selectDate.isNotEmpty() && comment.isNotEmpty() ){
 
-        }
-        else{
             val transaction = Transaction(
                 viewModel.transactionId.value!!,
                 transactionName,
@@ -178,13 +176,16 @@ class TransactionDetailFragment : Fragment() {
             viewModel.saveTransaction(transaction)
             this.requireActivity().onBackPressed()
         }
+        else{
+            Toast.makeText(requireContext(),"Please Enter Complete Information",Toast.LENGTH_SHORT).show()
+
+        }
 
 
 
     }
 
     private fun saveTransactionExpanse() {
-
         val transactionName = TransactionName.editText?.text.toString()
         val amount = etamount.editText?.text.toString()
         val selectDate = dateselect.editText?.text.toString()
@@ -193,15 +194,13 @@ class TransactionDetailFragment : Fragment() {
         val type = _type.selectedItemPosition
         val category = selectcategory.text.toString()
         val comment = comment.editText?.text.toString()
-        val vary: Float = amount.toFloat() * (-1)
-        if (transactionName.isEmpty() ||amount.isEmpty() ||selectDate.isEmpty() ||comment.isEmpty()){
-            Toast.makeText(requireContext(),"Please Enter Complete Information",Toast.LENGTH_SHORT).show()
-        }
-        else{
+
+        if (transactionName.isNotEmpty()  && amount.isNotEmpty() && selectDate.isNotEmpty() && comment.isNotEmpty() ){
+
             val transaction = Transaction(
                 viewModel.transactionId.value!!,
                 transactionName,
-                vary,
+                amount.toFloat(),
                 selectDate,
                 fromDate,
                 toDate,
@@ -216,7 +215,10 @@ class TransactionDetailFragment : Fragment() {
             viewModel.saveTransaction(transaction)
             this.requireActivity().onBackPressed()
         }
+        else{
+            Toast.makeText(requireContext(),"Please Enter Complete Information",Toast.LENGTH_SHORT).show()
 
+        }
 
     }
 

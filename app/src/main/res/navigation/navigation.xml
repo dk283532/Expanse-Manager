@@ -60,6 +60,9 @@
         <action
             android:id="@+id/action_transactionListFragment_to_dayTransactionFragment"
             app:destination="@id/dayTransactionFragment" />
+        <action
+            android:id="@+id/action_transactionListFragment_to_covidActivity"
+            app:destination="@id/covidActivity" />
     </fragment>
     <fragment
         android:id="@+id/transactionDetailFragment"
@@ -70,6 +73,9 @@
             android:name="id"
             app:argType="long"
             android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_transactionDetailFragment_to_transactionListFragment"
+            app:destination="@id/transactionListFragment" />
     </fragment>
     <fragment
         android:id="@+id/savedProfileFragment"
@@ -85,5 +91,10 @@
         android:name="com.example.expanse.dayTransaction.DayTransactionFragment"
         android:label="fragment_day_transaction"
         tools:layout="@layout/fragment_day_transaction" />
+    <activity
+        android:id="@+id/covidActivity"
+        android:name="com.example.expanse.Covid.CovidActivity"
+        android:label="activity_covid"
+        tools:layout="@layout/activity_covid" />
 
 </navigation>

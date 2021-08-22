@@ -35,5 +35,4 @@ interface  TransactionDao {
     @Query("SELECT SUM(amount) FROM `transaction` WHERE monthYear = :monthYear")
     fun getSumMonth(monthYear: Long): LiveData<Float>
 
-
 }
